@@ -23,7 +23,8 @@ pub fn process_csv(input: &str, output: String, format: OutputFormat) -> Result<
     let headers = reader.headers()?.clone();
     for result in reader.records() {
         let record:StringRecord = result?;
-        let json_value = headers.iter().zip(record.iter()).collect::<Value>();
+        let iter = headers.iter().zip(record.iter());
+        let json_value = iter.collect::<Value>();
         ret.push(json_value);
     }
 

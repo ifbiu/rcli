@@ -1,6 +1,4 @@
 /target
 /assets
 .idea
-output.json
-output.yaml
-output.toml
+output.*
